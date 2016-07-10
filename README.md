@@ -19,3 +19,12 @@ Edit the pom.xml to contain the project name of your choice, then run `mvn clean
 to make the plugin jar. Copy the jar from target/ to the neo4j/plugins folder and restart
 neo4j. Your procedures should be there, try `CALL dbms.procedures` to see them, or try
 run them.
+
+== Neo4j Version Dependencies
+
+Note that writing a custom API means that you might find yourself accessing lower level unsupported
+Neo4j APIs. This also means that your project will need to be updated for each release of
+Neo4j. There is no guarantee of any backwards support of the internal APIs that you use.
+
+Only write your own API based on unsupported APIs if you really have a string need for it
+or are dealing with some specific limitation of the current supported APIs.
